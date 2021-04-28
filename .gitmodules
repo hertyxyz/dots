@@ -1,9 +1,6 @@
 [submodule "Awesome/layout-machi"]
 	path = Awesome/layout-machi
 	url = https://github.com/xinhaoyuan/layout-machi
-[submodule "Awesome/lain"]
-	path = Awesome/lain
-	url = https://github.com/lcpz/lain
 [submodule "Awesome/freedesktop"]
 	path = Awesome/freedesktop
 	url = https://github.com/lcpz/awesome-freedesktop

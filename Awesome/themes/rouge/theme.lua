@@ -16,8 +16,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/rainbow"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/rouge"
+theme.wallpaper                                 = "~/Pictures/Papes/redwall.png"
 theme.font                                      = "Terminus 10.5"
 theme.fg_normal                                 = "#CBE3E7"
 theme.fg_focus                                  = "#A1EFD3"

@@ -70,7 +70,7 @@ require("components.menu")
 require("components.titlebar")
 require("components.bar")
 require("components.hello_user")
-require("components.sidebar")
+--require("components.sidebar")
 require("components.notifications")
 
 -- Load Global Keybindings

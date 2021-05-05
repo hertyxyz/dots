@@ -2,142 +2,302 @@ local C = require("misc.custom")
 
 local M = {}
 
-function M.custom_maximized_button(c)
+-- Right Buttons
 
-    local colr = '#689d6a'
-
+function M.custom_close_button(c)
     local buttons = gears.table.join(
-        awful.button({}, mouse.LEFT, function()
-           c.maximized = not state
-           state = not state
-        end))
-
-    local widget = C.hover_effect({
+        awful.button(
+            {}, mouse.LEFT, function()
+                c:kill()
+            end
+        )
+    )
+    local col = "#d94331"
+    local widget =
+        C.hover_effect(
         {
             {
-            nil,
-            {
                 {
-                    widget = wibox.container.background,
-                    forced_width = 4,
-                    forced_height = 4
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
                 },
                 widget = wibox.container.margin,
-                margins = 2,
-                id = "icon",
-                color = colr
+                left = 4,
+                right = 12
             },
-            nil,
-            layout = wibox.layout.align.vertical,
-            expand = "none"
+            widget = wibox.container.background
         },
-        widget = wibox.container.margin,
-        left = 16,
-        right = 16
-    },
-    widget = wibox.widget.background
-    }, function(w, m)
-        if m then
-            w.bg = colr
-            w:get_children_by_id("icon")[1].color = '#00000080'
-        else
-            w.bg = beautiful.transparent
-            w:get_children_by_id("icon")[1].color = colr
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
         end
-    end)
+    )
 
     widget:buttons(buttons)
+
+    return widget
+end
+
+function M.custom_maximized_button(c)
+    local buttons = gears.table.join(
+        awful.button(
+            {}, mouse.LEFT, function()
+                c.maximized = not state
+                state = not state
+            end
+        )
+    )
+    local col = "#689d6a"
+    local widget =
+        C.hover_effect(
+        {
+            {
+                {
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
+                },
+                widget = wibox.container.margin,
+                left = 4,
+                right = 4
+            },
+            widget = wibox.container.background
+        },
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
+        end
+    )
+
+    widget:buttons(buttons)
+
     return widget
 end
 
 function M.custom_minimized_button(c)
-
-    -- This only works on right click for some stupid reason
     local buttons = gears.table.join(
-        awful.button({}, mouse.RIGHT, function()
-            c.minimized = not c.minimized
-        end))
-
-    local colr = '#d79921'
-
-    local widget = C.hover_effect({
+        awful.button(
+            {}, mouse.LEFT, function()
+                c.minimized = not c.minimized
+            end
+        )
+    )
+    local col = "#d79921"
+    local widget =
+        C.hover_effect(
         {
             {
-            nil,
-            {
-                widget = wibox.container.background,
-                bg = colr,
-                forced_width = 10,
-                forced_height = 3,
-                id = 'icon'
+                {
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
+                },
+                widget = wibox.container.margin,
+                left = 4,
+                right = 4
             },
-            nil,
-            layout = wibox.layout.align.vertical,
-            expand = "none"
+            widget = wibox.container.background
         },
-        widget = wibox.container.margin,
-        left = 16,
-        top = 5,
-        right = 16
-    },
-    widget = wibox.widget.background
-    }, function(w, m)
-        if m then
-            w.bg = colr
-            w:get_children_by_id("icon")[1].bg = '#00000080'
-        else
-            w.bg = beautiful.transparent
-            w:get_children_by_id("icon")[1].bg = colr
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
         end
-    end)
+    )
 
     widget:buttons(buttons)
+
     return widget
 end
 
+-- Left Buttons
 
-function M.custom_close_button(c)
-
+function M.custom_floating_button(c)
     local buttons = gears.table.join(
-        awful.button({}, mouse.LEFT, function()
-            c:kill()
-        end))
-
-    local widget = C.hover_effect({
-    {
-        {
-            nil,
-            {
-
-                widget = wibox.container.background,
-                -- Definately not stolen from java's dots
-                shape = gears.shape.transform(gears.shape.cross):rotate_at(6.5, 6.5, math.pi / 4),
-                forced_width = 12,
-                id = 'icon',
-                bg = '#d94331',
-                forced_height = 12
-            },
-            nil,
-            layout = wibox.layout.align.vertical,
-            expand = "none"
-        },
-        widget = wibox.container.margin,
-        left = 16,
-        right = 16
-    },
-    widget = wibox.container.background
-    }, function(w, m)
-            if m then
-                w.bg = "#d94331"
-                w:get_children_by_id("icon")[1].bg ='#00000080'
-            else 
-                w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg ='#d94331'
+        awful.button(
+            {}, mouse.LEFT, function()
+                c.floating = not c.floating
             end
-        end)
+        )
+    )
+    local col = "#9e31d9"
+    local widget =
+        C.hover_effect(
+        {
+            {
+                {
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
+                },
+                widget = wibox.container.margin,
+                left = 12,
+                right = 4
+            },
+            widget = wibox.container.background
+        },
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
+        end
+    )
 
     widget:buttons(buttons)
-    
+
+    return widget
+end
+
+function M.custom_sticky_button(c)
+    local buttons = gears.table.join(
+        awful.button(
+            {}, mouse.LEFT, function()
+                c.sticky = not c.sticky
+            end
+        )
+    )
+    local col = "#31c1d9"
+    local widget =
+        C.hover_effect(
+        {
+            {
+                {
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
+                },
+                widget = wibox.container.margin,
+                left = 4,
+                right = 4
+            },
+            widget = wibox.container.background
+        },
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
+        end
+    )
+
+    widget:buttons(buttons)
+
+    return widget
+end
+
+function M.custom_ontop_button(c)
+    local buttons = gears.table.join(
+        awful.button(
+            {}, mouse.LEFT, function()
+                c.ontop = not c.ontop
+            end
+        )
+    )
+    local col = "#b3b3b3"
+    local widget =
+        C.hover_effect(
+        {
+            {
+                {
+                    nil,
+                    {
+                        widget = wibox.container.background,
+                        shape = gears.shape.circle,
+                        forced_width = 14,
+                        id = "icon",
+                        bg = col,
+                        forced_height = 14
+                    },
+                    nil,
+                    layout = wibox.layout.align.vertical,
+                    expand = "none"
+                },
+                widget = wibox.container.margin,
+                left = 4,
+                right = 4
+            },
+            widget = wibox.container.background
+        },
+        function(w, m)
+            if m then
+                -- w.bg = col
+                w:get_children_by_id("icon")[1].bg = col .. "90"
+            else
+                --w.bg = beautiful.transparent
+                w:get_children_by_id("icon")[1].bg = col
+            end
+        end
+    )
+
+    widget:buttons(buttons)
+
     return widget
 end
 

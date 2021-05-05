@@ -13,11 +13,11 @@ local theme = {}
 
 theme.font          = "SF Pro Display 10"
 
-theme.bg_normal     = "#1d2021"
+theme.bg_normal     = "#1c1f26"
 theme.bg_focus      = "#535d6c"
 
-theme.titlebar_bg_normal = "#3c3836"
-theme.titlebar_bg_focus = "#32302f"
+theme.titlebar_bg_normal = "#1c1f26"
+theme.titlebar_bg_focus = "#1c1f26"
 
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
@@ -28,13 +28,13 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(6)
+theme.useless_gap   = dpi(8)
 
 -- BORDER CONFIG
 
 theme.border_width  = dpi(1)
-theme.border_normal = "#3c3836"
-theme.border_focus  =  "#32302f"
+theme.border_normal = "#1c1f26"
+theme.border_focus  =  "#2e3440"
 theme.border_marked = "#91231c"
 
 -- END
@@ -49,7 +49,7 @@ theme.tag_preview_widget_border_color = "#45403d"
 theme.tag_preview_widget_margin = dpi(8)
 theme.tag_preview_client_border_width = dpi(3)
 theme.tag_preview_client_border_color = "#45403d"
-theme.tag_preview_client_bg = "#1d2021"
+theme.tag_preview_client_bg = "#1c1f26"
 theme.tag_preview_client_border_radius = dpi(3)
 
 -- END
@@ -115,7 +115,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."theme/titlebar/m
 theme.titlebar_maximized_button_normal_active = themes_path.."theme/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."theme/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path.."theme/streets.jpg"
+theme.wallpaper = "~/Pictures/Papes/spirited.png"
 theme.lockscreen_wallpaper = themes_path .. "theme/camera.jpg"
 theme.pfp = themes_path .. "theme/pfp.png"
 

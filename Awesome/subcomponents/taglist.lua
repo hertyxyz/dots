@@ -15,9 +15,9 @@ return function(s)
             filter  = awful.widget.taglist.filter.all,
             layout = wibox.layout.fixed.horizontal,
             style = {
-                fg_focus = "#ea6962",
-                fg_occupied = "#d4be98",
-                fg_empty = "#d4be98"
+                fg_focus = "#81a1c1",
+                fg_occupied = "#5a5f69",
+                fg_empty = "#2e3440"
             },
             widget_template = {
                 {

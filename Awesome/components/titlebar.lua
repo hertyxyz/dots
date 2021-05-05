@@ -35,8 +35,8 @@ client.connect_signal("request::titlebars", function(c)
     awful.titlebar(c, {
         size = 32,
         -- comment out for normal look
-        bg_normal = "#1d2021",
-        bg_focus = "#1d2021"
+        bg_normal = "#1c1f26",
+        bg_focus = "#1c1f26"
     }) : setup {
         { -- Left
             B.custom_floating_button(c),

@@ -27,7 +27,7 @@ require("awful.hotkeys_popup.keys")
 require("awful.autofocus")
 
 -- 🚀 Load Launch Script
-awful.spawn.with_shell("~/Documents/Scripts/launch.sh")
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- 🔨 Variable definitions
 

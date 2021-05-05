@@ -10,8 +10,17 @@ THEME="amora"
 # Config for awesomewm
 rsync -avu --delete ~/.config/awesome/ ./Awesome
 
+# Config for kitty
+rsync -avu --delete ~/.config/kitty/ ./Kitty
+
+# Config for rofi
+rsync -avu --delete ~/.config/rofi/ ./Rofi
+
 # Wallpapers
 rsync -avu --delete ~/Pictures/Papes/ ./Papes
+
+# Picom (compton) config
+cp ~/.config/picom.conf ./picom.conf
 
 # Xresources
 #cp ~/.Xresources ./Xresources/$THEME.xresources

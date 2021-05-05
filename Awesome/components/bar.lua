@@ -28,18 +28,18 @@ screen.connect_signal("request::desktop_decoration", function(s)
         }
     }
 
-    --[[local textclock = wibox.widget.textclock("%I:%M%P")
+    local textclock = wibox.widget.textclock("%I:%M%P")
     textclock:connect_signal("button::press", function()
         if textclock.format == "%I:%M%P" then
             textclock.format = "%I:%M%P ~ %d/%m/%y"
         else
             textclock.format = "%I:%M%P"
         end
-    end)--]]
+    end)
 
     s.mypromptbox = awful.widget.prompt {
         prompt = "🚀: ",
-        fg = "#d4be98",
+        fg = "#dddddd",
         font = "Sarasa UI HC Italic 10"
     }
 
@@ -47,8 +47,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s.mywibar = awful.wibar{
             position = "top",
             screen = s,
-            ontop = true,
-            background = "#1d2021"
+            ontop = false,
+            background = "#1c1f26"
         }
 
     -- Add widgets to the wibox
@@ -59,12 +59,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.fixed.horizontal
         },
         {
-            require("subcomponents.tasklist")(s),
+            --require("subcomponents.tasklist")(s),
             widget = wibox.container.margin,
             margins = 3
         },
         {
-            --textclock,
+            textclock,
             wibox.widget.systray(),
             layout = wibox.layout.fixed.horizontal
         },

@@ -13,8 +13,17 @@ git pull
 # Config for awesomewm
 rsync -avu --delete ./Awesome/ ~/.config/awesome
 
+# Config for kitty
+rsync -avu --delete ./Kitty/ ~/.config/kitty
+
+# Config for rofi
+rsync -avu --delete ./Rofi/ ~/.config/rofi
+
 # Wallpapers
 rsync -avu --delete ./Papes/ ~/Pictures/Papes
+
+# Picom (compton) config
+cp ./picom.conf ~/.config/picom.conf
 
 # Xresources
 #cp ./Xresources/$THEME.xresources ~/.Xresources

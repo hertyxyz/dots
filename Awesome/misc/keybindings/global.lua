@@ -185,11 +185,19 @@ globalkeys =
     ), -- Standard program
     awful.key(
         {modkey},
-        "t",
+        "Enter",
         function()
-            awful.spawn("st")
+            awful.spawn("kitty")
         end,
         {description = "open a terminal", group = "launcher"}
+    ),
+    awful.key(
+        {modkey},
+        "l",
+        function()
+            awful.spawn.with_shell("~/.config/awesome/lock.sh")
+        end,
+        {description = "lock the screen", group = "launcher"}
     ),
     awful.key(
         {modkey, "Control"},
@@ -201,6 +209,7 @@ globalkeys =
         }
     ),
     awful.key({modkey, "Shift"}, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
+    --[[
     awful.key(
         {modkey},
         "l",
@@ -209,6 +218,7 @@ globalkeys =
         end,
         {description = "increase master width factor", group = "layout"}
     ),
+    ]]--
     awful.key(
         {modkey},
         "h",

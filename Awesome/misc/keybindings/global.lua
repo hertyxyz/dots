@@ -185,9 +185,9 @@ globalkeys =
     ), -- Standard program
     awful.key(
         {modkey},
-        "Enter",
+        "Return",
         function()
-            awful.spawn("kitty")
+            awful.spawn.with_shell("kitty")
         end,
         {description = "open a terminal", group = "launcher"}
     ),

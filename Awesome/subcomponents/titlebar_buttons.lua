@@ -2,6 +2,8 @@ local C = require("misc.custom")
 
 local M = {}
 
+local u_trans = "99"
+
 -- Right Buttons
 
 function M.custom_close_button(c)
@@ -13,6 +15,7 @@ function M.custom_close_button(c)
         )
     )
     local col = "#d94331"
+    local col_d = "#d94331" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -24,7 +27,7 @@ function M.custom_close_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -40,10 +43,10 @@ function M.custom_close_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )
@@ -63,6 +66,7 @@ function M.custom_maximized_button(c)
         )
     )
     local col = "#689d6a"
+    local col_d = "#689d6a" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -74,7 +78,7 @@ function M.custom_maximized_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -90,10 +94,10 @@ function M.custom_maximized_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )
@@ -112,6 +116,7 @@ function M.custom_minimized_button(c)
         )
     )
     local col = "#d79921"
+    local col_d = "#d79921" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -123,7 +128,7 @@ function M.custom_minimized_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -139,10 +144,10 @@ function M.custom_minimized_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )
@@ -163,6 +168,7 @@ function M.custom_floating_button(c)
         )
     )
     local col = "#9e31d9"
+    local col_d = "#9e31d9" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -174,7 +180,7 @@ function M.custom_floating_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -190,10 +196,10 @@ function M.custom_floating_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )
@@ -212,6 +218,7 @@ function M.custom_sticky_button(c)
         )
     )
     local col = "#31c1d9"
+    local col_d = "#31c1d9" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -223,7 +230,7 @@ function M.custom_sticky_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -239,10 +246,10 @@ function M.custom_sticky_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )
@@ -261,6 +268,7 @@ function M.custom_ontop_button(c)
         )
     )
     local col = "#b3b3b3"
+    local col_d = "#b3b3b3" .. u_trans
     local widget =
         C.hover_effect(
         {
@@ -272,7 +280,7 @@ function M.custom_ontop_button(c)
                         shape = gears.shape.circle,
                         forced_width = 14,
                         id = "icon",
-                        bg = col,
+                        bg = col_d,
                         forced_height = 14
                     },
                     nil,
@@ -288,10 +296,10 @@ function M.custom_ontop_button(c)
         function(w, m)
             if m then
                 -- w.bg = col
-                w:get_children_by_id("icon")[1].bg = col .. "90"
+                w:get_children_by_id("icon")[1].bg = col
             else
                 --w.bg = beautiful.transparent
-                w:get_children_by_id("icon")[1].bg = col
+                w:get_children_by_id("icon")[1].bg = col_d
             end
         end
     )

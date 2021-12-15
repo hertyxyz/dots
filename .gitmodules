@@ -1,6 +1,9 @@
 [submodule "Awesome/layout-machi"]
 	path = Awesome/layout-machi
-	url = https://github.com/xinhaoyuan/layout-machi
+	url = git@github.com:xinhaoyuan/layout-machi.git
 [submodule "Awesome/freedesktop"]
 	path = Awesome/freedesktop
 	url = https://github.com/lcpz/awesome-freedesktop
+[submodule "Awesome/bling"]
+	path = Awesome/bling
+	url = git@github.com:BlingCorp/bling.git
